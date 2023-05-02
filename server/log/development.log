@@ -1,0 +1,43 @@
+Started GET "/books/1-603-09398-2" for ::1 at 2023-05-01 15:45:12 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"1-603-09398-2"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."isbn" = $1 LIMIT $2[0m  [["isbn", "9781603093989"], ["LIMIT", 1]]
+  ↳ app/services/books_services/get_book.rb:14:in `book'
+  [1m[36mAuthor Pluck (0.8ms)[0m  [1m[34mSELECT "authors"."first_name", "authors"."middle_name", "authors"."last_name" FROM "authors" INNER JOIN "book_authors" ON "authors"."id" = "book_authors"."author_id" WHERE "book_authors"."book_id" = $1[0m  [["book_id", 9781603093989]]
+  ↳ app/models/book.rb:24:in `author_names'
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/book.rb:31:in `publisher_name'
+complete out={:authors=>"Rainer Steel Rilke", :edition=>nil, :image_url=>"https://s3.amazonaws.com/comicgeeks/comics/covers/large-6274588.jpg?1559820703", :isbn=>"978-1-60309-398-9", :price=>3000.0, :publication_year=>2022, :publisher=>"McSweeney's", :title=>"The Underwater Welder"}
+Completed 200 OK in 46ms (Views: 0.2ms | ActiveRecord: 12.3ms | Allocations: 30878)
+
+
+Started GET "/books/1-891-83085-6" for ::1 at 2023-05-01 15:45:26 +0800
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"1-891-83085-6"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."isbn" = $1 LIMIT $2[0m  [["isbn", "9781891830853"], ["LIMIT", 1]]
+  ↳ app/services/books_services/get_book.rb:14:in `book'
+  [1m[36mAuthor Pluck (0.4ms)[0m  [1m[34mSELECT "authors"."first_name", "authors"."middle_name", "authors"."last_name" FROM "authors" INNER JOIN "book_authors" ON "authors"."id" = "book_authors"."author_id" WHERE "book_authors"."book_id" = $1[0m  [["book_id", 9781891830853]]
+  ↳ app/models/book.rb:24:in `author_names'
+  [1m[36mPublisher Load (0.1ms)[0m  [1m[34mSELECT "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/book.rb:31:in `publisher_name'
+complete out={:authors=>"Joel Hartse, Hannah P. Templer, Marguerite Z. Duras", :edition=>"Book 2", :image_url=>"https://www.topshelfcomix.com/catalog/covers/americanelfvol2_lg.jpg", :isbn=>"978-1-891830-85-3", :price=>1000.0, :publication_year=>2004, :publisher=>"Paste Magazine", :title=>"American Elf"}
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 2466)
+
+
+Started GET "/books/1-891-83085-" for ::1 at 2023-05-01 15:46:02 +0800
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"1-891-83085-"}
+fail err=Booker::BadRequest msg=Invalid ISBN format
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 243)
+
+
+Started GET "/books/978-3-16-148410-0" for ::1 at 2023-05-01 15:46:11 +0800
+Processing by BooksController#show as */*
+  Parameters: {"id"=>"978-3-16-148410-0"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."isbn" = $1 LIMIT $2[0m  [["isbn", "9783161484100"], ["LIMIT", 1]]
+  ↳ app/services/books_services/get_book.rb:14:in `book'
+fail err=Booker::NotFound msg=Book with ISBN: 978-3-16-148410-0 not found.
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 807)
+
+
