@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  font-size: 14px;
+}
