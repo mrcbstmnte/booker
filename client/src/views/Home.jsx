@@ -94,22 +94,22 @@ const Home = () => {
             <Title align="center" order={1} color="#fff">Trusted By Awesome <span style={{ color: "#F5C644" }}>Clients</span></Title>
             <Group spacing={20} position="center" pt={20}>
               <Group>
-                <Image src={BinanceWhite} width={32} /> <Text color="#fff" fw={600}>Binance</Text>
+                <Image src={BinanceWhite} width={32} /><Text color="#fff" fw={600}>Binance</Text>
               </Group>
               <Group>
-                <Image src={Bitcoin} width={32} /> <Text color="#fff" fw={600}>Bitcoin</Text>
+                <Image src={Bitcoin} width={32} /><Text color="#fff" fw={600}>Bitcoin</Text>
               </Group>
               <Group>
-                <Image src={Solana} width={32} /> <Text color="#fff" fw={600}>Solana</Text>
+                <Image src={Solana} width={32} /><Text color="#fff" fw={600}>Solana</Text>
               </Group>
               <Group>
-                <Image src={Ethereum} width={32} /> <Text color="#fff" fw={600}>Ethereum</Text>
+                <Image src={Ethereum} width={32} /><Text color="#fff" fw={600}>Ethereum</Text>
               </Group>
               <Group>
-                <Image src={Tether} width={32} /> <Text color="#fff" fw={600}>Tether</Text>
+                <Image src={Tether} width={32} /><Text color="#fff" fw={600}>Tether</Text>
               </Group>
               <Group>
-                <Image src={XRP} width={32} /> <Text color="#fff" fw={600}>XRP</Text>
+                <Image src={XRP} width={32} /><Text color="#fff" fw={600}>XRP</Text>
               </Group>
             </Group>
           </Container>
@@ -148,8 +148,8 @@ const Home = () => {
             </Group>
           </div>
         </Container>
-        <div style={{ backgroundColor: "#061B36", transform: "skewY(-3deg)", width: "100%", height: "auto" }}>
-          <Container size="lg" pt={250} pb={100} style={{ transform: "skewY(3deg)", color: "#fff" }}>
+        <div className='skewed--content'>
+          <Container size="lg" pt={250} pb={100} className='container'>
             <Text size="xs" color="#f5c644">LOREM IPSUM</Text>
             <Title order={1}>3 Reasons To Shop With Us</Title>
             <Group spacing={50} pt={50}>
@@ -209,10 +209,10 @@ const Home = () => {
             <Text color="#60D2FA" size="sm" style={{ lineHeight: .50 }}>Product Manager, Binance</Text>
             <Group style={{ verticalAlign: 'middle' }}><img src={BinanceGray} width={32} /> <Text color="#898EA9" fw={600}>Binance</Text></Group>
           </Stack>
-          <Stack px={200} style={{ position: "relative" }}>
-            <Avatar size="lg" src={User} style={{ position: "absolute", left: "48%", top: "-30px", zIndex: 1 }} />
-            <div style={{ backgroundColor: "#D9E9FD", width: 710, height: 20, top: -15, borderRadius: 5, marginLeft: 15, position: 'absolute' }}></div>
-            <Card padding="lg" radius="md" withBorder={false} style={{ backgroundColor: "#4399F7" }}>
+          <Stack px={200} className='stacked-cards'>
+            <Avatar size="lg" src={User} className='stacked-cards--avatar' />
+            <div className='stacked-cards--background'></div>
+            <Card padding="lg" radius="md" withBorder={false} className='stacked-cards--foreground'>
               <Text align="center" color="#fff" pt={30}>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam<br />
                 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam<br />
@@ -234,33 +234,49 @@ const Home = () => {
                 <Accordion.Control
                   className='purple'
                   style={{ padding: 0, fontWeight: 600 }}
-                >Dedicated customer support and help portal.</Accordion.Control>
-                <Accordion.Panel py={20}>With our dedicated customer support team, you can rest easy knowing that we’re doing
-                  everything we can to save you time, money, and stress.</Accordion.Panel>
+                >
+                  Dedicated customer support and help portal.
+                </Accordion.Control>
+                <Accordion.Panel py={20}>
+                  With our dedicated customer support team, you can rest easy knowing that we’re doing
+                  everything we can to save you time, money, and stress.
+                </Accordion.Panel>
               </Accordion.Item>
 
               <Accordion.Item value="lorem1">
                 <Accordion.Control
                   className='purple'
                   style={{ padding: 0, fontWeight: 600 }}
-                >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed</Accordion.Control>
-                <Accordion.Panel py={20}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed.</Accordion.Panel>
+                >
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                </Accordion.Control>
+                <Accordion.Panel py={20}>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed.
+                </Accordion.Panel>
               </Accordion.Item>
 
               <Accordion.Item value="lorem2">
                 <Accordion.Control
                   className='purple'
                   style={{ padding: 0, fontWeight: 600 }}
-                >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed</Accordion.Control>
-                <Accordion.Panel py={20}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed.</Accordion.Panel>
+                >
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                </Accordion.Control>
+                <Accordion.Panel py={20}>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed.
+                </Accordion.Panel>
               </Accordion.Item>
 
               <Accordion.Item value="lorem3">
                 <Accordion.Control
                   className='purple'
                   style={{ padding: 0, fontWeight: 600 }}
-                >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed</Accordion.Control>
-                <Accordion.Panel py={20}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed.</Accordion.Panel>
+                >
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                </Accordion.Control>
+                <Accordion.Panel py={20}>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed.
+                </Accordion.Panel>
               </Accordion.Item>
             </Accordion>
           </Stack>

@@ -18,7 +18,7 @@ import Head from '../components/Head'
 import Error from './Error'
 
 import { BookerContext } from '../App'
-import { api } from '../api';
+import { api } from '../service/api';
 
 import './Book.css'
 
