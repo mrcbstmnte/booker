@@ -15,7 +15,21 @@ The command below will do the following:
 $ ./bin/setup
 ```
 
+This is only recommended for first time setup. Once database preparation and dependencies have been installed, the command below can be ran to start the server
+
+```sh
+$ ./bin/rails s
+```
+
 Tested using Ruby 3.2.2
+
+## Running the tests
+
+Unit tests are located in the [spec](./server/spec) folder. To run the tests, run the command below
+
+```sh
+$ bundle exec rspec
+```
 
 # Frontend Setup
 
