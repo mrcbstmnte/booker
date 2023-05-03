@@ -12,13 +12,13 @@ The command below will do the following:
 - Start the server
 
 ```sh
-$ ./bin/setup
+$ cd server && ./bin/setup
 ```
 
 This is only recommended for first time setup. Once database preparation and dependencies have been installed, the command below can be ran to start the server
 
 ```sh
-$ ./bin/rails s
+$ cd server && ./bin/rails s
 ```
 
 Tested using Ruby 3.2.2
@@ -28,7 +28,7 @@ Tested using Ruby 3.2.2
 Unit tests are located in the [spec](./server/spec) folder. To run the tests, run the command below
 
 ```sh
-$ bundle exec rspec
+$ cd server && bundle exec rspec
 ```
 
 # Frontend Setup
