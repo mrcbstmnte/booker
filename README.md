@@ -40,3 +40,6 @@ $ cd client && yarn dev
 ```
 
 *Note* For demonstration purposes, the server will be ran in development mode. After running the commands above, the web application can be accessed in http://localhost:8080
+
+> [!WARNING]  
+> Critical content demanding immediate user attention due to potential risks.
